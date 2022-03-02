@@ -1,0 +1,15 @@
+C:\Users\avedo\source\repos\Ucilica\Ucilica\bin\Debug\login.accdb
+C:\Users\avedo\source\repos\Ucilica\Ucilica\bin\Debug\Ucilica.exe.config
+C:\Users\avedo\source\repos\Ucilica\Ucilica\bin\Debug\Ucilica.exe
+C:\Users\avedo\source\repos\Ucilica\Ucilica\bin\Debug\Ucilica.pdb
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.AssemblyReference.cache
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Form1.resources
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Properties.Resources.resources
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.GenerateResource.cache
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.CoreCompileInputs.cache
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.exe
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.pdb
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Register.resources
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Razred.resources
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Admin.resources
+C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Dodaj.resources
