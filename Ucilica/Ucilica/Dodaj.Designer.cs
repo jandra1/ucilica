@@ -53,7 +53,7 @@ namespace Ucilica
             this.label1.Location = new System.Drawing.Point(204, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Razred:";
             // 
@@ -64,7 +64,7 @@ namespace Ucilica
             this.label2.Location = new System.Drawing.Point(197, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Predmet:";
             // 
@@ -75,7 +75,7 @@ namespace Ucilica
             this.label3.Location = new System.Drawing.Point(210, 144);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Pitanje:";
             // 
@@ -86,7 +86,7 @@ namespace Ucilica
             this.label4.Location = new System.Drawing.Point(189, 204);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Odgovor 1:";
             // 
@@ -97,7 +97,7 @@ namespace Ucilica
             this.label5.Location = new System.Drawing.Point(185, 254);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Odgovor 2:";
             // 
@@ -108,7 +108,7 @@ namespace Ucilica
             this.label6.Location = new System.Drawing.Point(185, 294);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 17);
+            this.label6.Size = new System.Drawing.Size(73, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Odgovor 3:";
             // 
@@ -119,7 +119,7 @@ namespace Ucilica
             this.label7.Location = new System.Drawing.Point(161, 341);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.Size = new System.Drawing.Size(103, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Točan odgovor:";
             // 
@@ -133,6 +133,7 @@ namespace Ucilica
             this.button1.TabIndex = 7;
             this.button1.Text = "Dodaj!";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 

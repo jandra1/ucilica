@@ -15,7 +15,7 @@ namespace Ucilica
     {
 
         public static string name = "";   // u njoj ćemo pamtiti username osobe koja će se ulogirati
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\avedo\source\repos\Ucilica\Ucilica\login.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
 
         public Form1()
         {
@@ -64,11 +64,13 @@ namespace Ucilica
                         Admin a = new Admin();  // korisnik se uspješno ulogirao - ulazi na glavnu "stranicu"
                         a.Show();
                     }
-                    con.Close();  // obavezno zatvaramo vezu s bazom
-                    this.Hide();
-                    Razred m = new Razred();  // korisnik se uspješno ulogirao - ulazi na glavnu "stranicu"
-                    m.Show();
-
+                    else
+                    {
+                        con.Close();  // obavezno zatvaramo vezu s bazom
+                        this.Hide();
+                        Razred m = new Razred();  // korisnik se uspješno ulogirao - ulazi na glavnu "stranicu"
+                        m.Show();
+                    }
                 }
 
                 else

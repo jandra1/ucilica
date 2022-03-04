@@ -52,6 +52,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="dataBase.cs" />
     <Compile Include="Dodaj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +65,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="loginDataSet.cs">
-      <DependentUpon>loginDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="loginDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>loginDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="loginDataSet1.cs">
-      <DependentUpon>loginDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="loginDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,6 +81,7 @@
     <Compile Include="Pitanje.Designer.cs">
       <DependentUpon>Pitanje.cs</DependentUpon>
     </Compile>
+    <Compile Include="pitanjeKlasa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razred.cs">
@@ -167,6 +163,8 @@
     <Content Include="login.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\wrong.wav" />
+    <None Include="Resources\yay.wav" />
     <None Include="Resources\pppbooks.png" />
     <None Include="Resources\pribor.jpg" />
     <None Include="Resources\back1.jpg" />

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,14 +15,132 @@ namespace Ucilica
     {
         string predmet;
         int razred;
+        List<pitanjeKlasa> pitanja;
         dataBase db = new dataBase();
         Random rnd = new Random();
-        public Pitanje()
+        pitanjeKlasa trenutnoPitanje;
+        int brojac = 0;
+        int bodovi = 0;
+        private SoundPlayer yay;
+        private SoundPlayer wrong;
+        public Pitanje(int _razred, string _predmet)
         {
+            
             InitializeComponent();
-            List<pitanjeKlasa> pitanja = db.getQuestionsByYearAndubject(razred, predmet);
+            predmet = _predmet;
+            razred = _razred;
+            pitanja = db.getQuestionsByYearAndSubject(razred, predmet);
+            
+            yay = new SoundPlayer(Properties.Resources.yay);
+            wrong = new SoundPlayer(Properties.Resources.wrong);
+            sljedećePitanje();
+            
+        }
+
+        private void odgovor1_Click(object sender, EventArgs e)
+        {
+            if(odgovor1.Text == trenutnoPitanje.točan)
+            {
+                odgovor1.BackColor = Color.Green;
+                yay.Play();
+                bodovi += 10;
+            }
+            else
+            {
+                odgovor1.BackColor = Color.Red;
+                wrong.Play();
+                if (odgovor2.Text == trenutnoPitanje.točan) odgovor2.BackColor = Color.Green;
+                else if (odgovor3.Text == trenutnoPitanje.točan) odgovor3.BackColor = Color.Green;
+                else odgovor4.BackColor = Color.Green;
+            }
+        }
+
+        private void odgovor2_Click(object sender, EventArgs e)
+        {
+            if (odgovor2.Text == trenutnoPitanje.točan)
+            {
+                odgovor2.BackColor = Color.Green;
+                yay.Play();
+                bodovi += 10;
+            }
+            else
+            {
+                odgovor2.BackColor = Color.Red;
+                wrong.Play();
+                if (odgovor1.Text == trenutnoPitanje.točan) odgovor1.BackColor = Color.Green;
+                else if (odgovor3.Text == trenutnoPitanje.točan) odgovor3.BackColor = Color.Green;
+                else odgovor4.BackColor = Color.Green;
+            }
+        }
+
+        private void odgovor3_Click(object sender, EventArgs e)
+        {
+            if (odgovor3.Text == trenutnoPitanje.točan)
+            {
+                odgovor3.BackColor = Color.Green;
+                yay.Play();
+                bodovi += 10;
+            }
+            else
+            {
+                odgovor3.BackColor = Color.Red;
+                wrong.Play();
+                if (odgovor2.Text == trenutnoPitanje.točan) odgovor2.BackColor = Color.Green;
+                else if (odgovor4.Text == trenutnoPitanje.točan) odgovor4.BackColor = Color.Green;
+                else odgovor1.BackColor = Color.Green;
+            }
+        }
+
+        private void odgovor4_Click(object sender, EventArgs e)
+        {
+            if (odgovor3.Text == trenutnoPitanje.točan)
+            {
+                odgovor3.BackColor = Color.Green;
+                yay.Play();
+                bodovi += 10;
+            }
+            else
+            {
+                odgovor3.BackColor = Color.Red;
+                wrong.Play();
+                if (odgovor2.Text == trenutnoPitanje.točan) odgovor2.BackColor = Color.Green;
+                else if (odgovor3.Text == trenutnoPitanje.točan) odgovor3.BackColor = Color.Green;
+                else odgovor1.BackColor = Color.Green;
+            }
+        }
+
+        private void sljedećePitanje()
+        {
+            if (brojac > 9)
+            {
+                //kraj kviza
+            }
+            odgovor1.BackColor = Color.FromKnownColor(KnownColor.Control);
+            odgovor2.BackColor = Color.FromKnownColor(KnownColor.Control);
+            odgovor3.BackColor = Color.FromKnownColor(KnownColor.Control);
             int i = rnd.Next(0, pitanja.Count);
-            pitanjeTextBox.Text = pitanja[].pitanje;
+            trenutnoPitanje = pitanja[i];
+            pitanja.RemoveAt(i);
+            pitanjeTextBox.Text = trenutnoPitanje.pitanje;
+            List<string> odgovori = trenutnoPitanje.odgovori;
+            int r = rnd.Next(0, odgovori.Count);
+            odgovor1.Text = odgovori[r]; odgovori.RemoveAt(r);
+            r = rnd.Next(0, odgovori.Count);
+            odgovor2.Text = odgovori[r]; odgovori.RemoveAt(r);
+            r = rnd.Next(0, odgovori.Count);
+            odgovor3.Text = odgovori[r]; odgovori.RemoveAt(r);
+            odgovor4.Text = odgovori[0];
+            if (trenutnoPitanje.slika != "") //otvori sliku u novom prozoru
+            {
+                string imeSlike = trenutnoPitanje.slika;
+                Form f = new Form();
+                string ime = "..\\..\\pitanja i slike\\" + imeSlike;
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Image = new Bitmap(ime);
+                f.Controls.Add(pictureBox);
+                //f.ShowDialog();
+            }
+            ++brojac;
         }
     }
 }
