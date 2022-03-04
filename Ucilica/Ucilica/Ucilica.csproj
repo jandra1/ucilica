@@ -64,10 +64,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="loginDataSet.cs">
+      <DependentUpon>loginDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="loginDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>loginDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="loginDataSet1.cs">
+      <DependentUpon>loginDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="loginDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>

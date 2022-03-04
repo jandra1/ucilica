@@ -29,3 +29,20 @@ F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.Cor
 F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.exe
 F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.pdb
 F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Pitanje.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\bin\Debug\login.accdb
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.exe.config
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.exe
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.pdb
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.AssemblyReference.cache
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.SuggestedBindingRedirects.cache
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Admin.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Dodaj.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Form1.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Pitanje.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Properties.Resources.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Razred.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Register.resources
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.GenerateResource.cache
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.CoreCompileInputs.cache
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.exe
+C:\Users\john\Source\Repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.pdb
