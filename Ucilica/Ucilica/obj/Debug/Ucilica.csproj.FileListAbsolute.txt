@@ -13,3 +13,19 @@ C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Register.resources
 C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Razred.resources
 C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Admin.resources
 C:\Users\avedo\source\repos\Ucilica\Ucilica\obj\Debug\Ucilica.Dodaj.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\bin\Debug\login.accdb
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\bin\Debug\Ucilica.exe.config
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\bin\Debug\Ucilica.exe
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\bin\Debug\Ucilica.pdb
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.AssemblyReference.cache
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Admin.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Dodaj.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Form1.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Properties.Resources.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Razred.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Register.resources
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.GenerateResource.cache
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.CoreCompileInputs.cache
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.exe
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.pdb
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Pitanje.resources
