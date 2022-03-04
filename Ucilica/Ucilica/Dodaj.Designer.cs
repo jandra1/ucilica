@@ -37,13 +37,13 @@ namespace Ucilica
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.razredTtextBox = new System.Windows.Forms.TextBox();
+            this.predmetTextBox = new System.Windows.Forms.TextBox();
+            this.pitanjeTextBox = new System.Windows.Forms.TextBox();
+            this.odg1TextBox = new System.Windows.Forms.TextBox();
+            this.odg2TtextBox = new System.Windows.Forms.TextBox();
+            this.odg3TextBox = new System.Windows.Forms.TextBox();
+            this.odgtTtextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -135,62 +135,62 @@ namespace Ucilica
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // razredTtextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 8;
+            this.razredTtextBox.Location = new System.Drawing.Point(271, 39);
+            this.razredTtextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.razredTtextBox.Name = "razredTtextBox";
+            this.razredTtextBox.Size = new System.Drawing.Size(132, 22);
+            this.razredTtextBox.TabIndex = 8;
             // 
-            // textBox2
+            // predmetTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(271, 85);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 9;
+            this.predmetTextBox.Location = new System.Drawing.Point(271, 85);
+            this.predmetTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.predmetTextBox.Name = "predmetTextBox";
+            this.predmetTextBox.Size = new System.Drawing.Size(132, 22);
+            this.predmetTextBox.TabIndex = 9;
             // 
-            // textBox3
+            // pitanjeTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(271, 129);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(683, 49);
-            this.textBox3.TabIndex = 10;
+            this.pitanjeTextBox.Location = new System.Drawing.Point(271, 129);
+            this.pitanjeTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.pitanjeTextBox.Multiline = true;
+            this.pitanjeTextBox.Name = "pitanjeTextBox";
+            this.pitanjeTextBox.Size = new System.Drawing.Size(683, 49);
+            this.pitanjeTextBox.TabIndex = 10;
             // 
-            // textBox4
+            // odg1TextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(271, 201);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 22);
-            this.textBox4.TabIndex = 11;
+            this.odg1TextBox.Location = new System.Drawing.Point(271, 201);
+            this.odg1TextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.odg1TextBox.Name = "odg1TextBox";
+            this.odg1TextBox.Size = new System.Drawing.Size(132, 22);
+            this.odg1TextBox.TabIndex = 11;
             // 
-            // textBox5
+            // odg2TtextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(271, 250);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(132, 22);
-            this.textBox5.TabIndex = 12;
+            this.odg2TtextBox.Location = new System.Drawing.Point(271, 250);
+            this.odg2TtextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.odg2TtextBox.Name = "odg2TtextBox";
+            this.odg2TtextBox.Size = new System.Drawing.Size(132, 22);
+            this.odg2TtextBox.TabIndex = 12;
             // 
-            // textBox6
+            // odg3TextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(271, 290);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(132, 22);
-            this.textBox6.TabIndex = 13;
+            this.odg3TextBox.Location = new System.Drawing.Point(271, 290);
+            this.odg3TextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.odg3TextBox.Name = "odg3TextBox";
+            this.odg3TextBox.Size = new System.Drawing.Size(132, 22);
+            this.odg3TextBox.TabIndex = 13;
             // 
-            // textBox7
+            // odgtTtextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(271, 337);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(132, 22);
-            this.textBox7.TabIndex = 14;
+            this.odgtTtextBox.Location = new System.Drawing.Point(271, 337);
+            this.odgtTtextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.odgtTtextBox.Name = "odgtTtextBox";
+            this.odgtTtextBox.Size = new System.Drawing.Size(132, 22);
+            this.odgtTtextBox.TabIndex = 14;
             // 
             // Dodaj
             // 
@@ -199,13 +199,13 @@ namespace Ucilica
             this.BackgroundImage = global::Ucilica.Properties.Resources.pppbooks;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1073, 514);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.odgtTtextBox);
+            this.Controls.Add(this.odg3TextBox);
+            this.Controls.Add(this.odg2TtextBox);
+            this.Controls.Add(this.odg1TextBox);
+            this.Controls.Add(this.pitanjeTextBox);
+            this.Controls.Add(this.predmetTextBox);
+            this.Controls.Add(this.razredTtextBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -232,12 +232,12 @@ namespace Ucilica
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox razredTtextBox;
+        private System.Windows.Forms.TextBox predmetTextBox;
+        private System.Windows.Forms.TextBox pitanjeTextBox;
+        private System.Windows.Forms.TextBox odg1TextBox;
+        private System.Windows.Forms.TextBox odg2TtextBox;
+        private System.Windows.Forms.TextBox odg3TextBox;
+        private System.Windows.Forms.TextBox odgtTtextBox;
     }
 }

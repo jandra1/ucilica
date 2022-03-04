@@ -25,13 +25,17 @@ namespace Ucilica
         private void button1_Click(object sender, EventArgs e)
         {
             dataBase db = new dataBase();
-            if (!predmeti.Contains(textBox2.Text)){
-                db.addSubject(textBox2.Text);
+            if (!predmeti.Contains(predmetTextBox.Text)){
+                db.addSubject(predmetTextBox.Text);
                 
             }
             pitanjeKlasa pitanje = new pitanjeKlasa()
             {
-
+                pitanje = pitanjeTextBox.Text,
+                razred = int.Parse(razredTtextBox.Text),
+                predmet = predmetTextBox.Text,
+                točan = odgtTtextBox.Text,
+                odgovori = new List<string>() { odg1TextBox.Text, odg2TtextBox.Text, odg3TextBox.Text, odgtTtextBox.Text}
             };
             db.addQuestion(pitanje);
         }
