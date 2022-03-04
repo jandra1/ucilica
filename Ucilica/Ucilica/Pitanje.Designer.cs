@@ -29,22 +29,22 @@ namespace Ucilica
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pitanjeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.odgovor1 = new System.Windows.Forms.Button();
             this.odgovor2 = new System.Windows.Forms.Button();
             this.odgovor3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // pitanjeTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.Location = new System.Drawing.Point(39, 76);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(796, 93);
-            this.textBox1.TabIndex = 0;
+            this.pitanjeTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pitanjeTextBox.Location = new System.Drawing.Point(39, 76);
+            this.pitanjeTextBox.Multiline = true;
+            this.pitanjeTextBox.Name = "pitanjeTextBox";
+            this.pitanjeTextBox.ReadOnly = true;
+            this.pitanjeTextBox.Size = new System.Drawing.Size(796, 93);
+            this.pitanjeTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -52,7 +52,7 @@ namespace Ucilica
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(36, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pitanje: ";
             // 
@@ -93,7 +93,7 @@ namespace Ucilica
             this.Controls.Add(this.odgovor2);
             this.Controls.Add(this.odgovor1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pitanjeTextBox);
             this.Name = "Pitanje";
             this.Text = "Pitanje";
             this.ResumeLayout(false);
@@ -103,7 +103,7 @@ namespace Ucilica
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pitanjeTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button odgovor1;
         private System.Windows.Forms.Button odgovor2;
