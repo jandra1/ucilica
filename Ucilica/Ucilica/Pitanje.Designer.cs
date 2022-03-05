@@ -35,6 +35,7 @@ namespace Ucilica
             this.odgovor2 = new System.Windows.Forms.Button();
             this.odgovor3 = new System.Windows.Forms.Button();
             this.odgovor4 = new System.Windows.Forms.Button();
+            this.time = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pitanjeTextBox
@@ -97,12 +98,22 @@ namespace Ucilica
             this.odgovor4.UseVisualStyleBackColor = true;
             this.odgovor4.Click += new System.EventHandler(this.odgovor4_Click);
             // 
+            // time
+            // 
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(910, 27);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(44, 16);
+            this.time.TabIndex = 6;
+            this.time.Text = "label2";
+            // 
             // Pitanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Ucilica.Properties.Resources.ucionica;
-            this.ClientSize = new System.Drawing.Size(876, 484);
+            this.ClientSize = new System.Drawing.Size(1046, 487);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.odgovor4);
             this.Controls.Add(this.odgovor3);
             this.Controls.Add(this.odgovor2);
@@ -124,5 +135,6 @@ namespace Ucilica
         private System.Windows.Forms.Button odgovor2;
         private System.Windows.Forms.Button odgovor3;
         private System.Windows.Forms.Button odgovor4;
+        private System.Windows.Forms.Label time;
     }
 }

@@ -23,10 +23,14 @@ namespace Ucilica
         int bodovi = 0;
         private SoundPlayer yay;
         private SoundPlayer wrong;
+
+        private Timer t;
+        private int timeElapsed;
         public Pitanje(int _razred, string _predmet)
         {
             
             InitializeComponent();
+            initializeTime();
             predmet = _predmet;
             razred = _razred;
             pitanja = db.getQuestionsByYearAndSubject(razred, predmet);
@@ -141,6 +145,25 @@ namespace Ucilica
                 //f.ShowDialog();
             }
             ++brojac;
+        }
+
+        private void initializeTime()
+        {
+            timeElapsed = 0;
+            TimeSpan timespan = TimeSpan.FromMilliseconds(timeElapsed);
+            time.Text = "Vrijeme: " + timespan.ToString(@"mm\:ss");
+            t = new Timer();
+            //t = new Timer();
+            t.Tick += new EventHandler(t_Tick);
+            t.Interval = 1000;
+            t.Start();
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            timeElapsed += t.Interval;
+            TimeSpan timespan = TimeSpan.FromMilliseconds(timeElapsed);
+            time.Text = "Time: " + timespan.ToString(@"mm\:ss");
         }
     }
 }
