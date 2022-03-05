@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Ucilica",
+    "\\Ucilica\\Ucilica"
   ],
-  "SelectedNode": "\\Ucilica.sln",
+  "SelectedNode": "\\Ucilica\\Ucilica\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
