@@ -16,24 +16,25 @@ namespace Ucilica
         public Dodaj()
         {
             InitializeComponent();
-            predmeti.Add("geografija");
-            predmeti.Add("matematika");
-            predmeti.Add("hrvatski");
-            predmeti.Add("povijest");
+            predmetComboBox.Items.Add("geografija");
+            predmetComboBox.Items.Add("matematika");
+            predmetComboBox.Items.Add("hrvatski");
+            predmetComboBox.Items.Add("povijest");
+
+            razredComboBox.Items.Add("5");
+            razredComboBox.Items.Add("6");
+            razredComboBox.Items.Add("7");
+            razredComboBox.Items.Add("8");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dataBase db = new dataBase();
-            if (!predmeti.Contains(predmetTextBox.Text)){
-                db.addSubject(predmetTextBox.Text);
-                
-            }
             pitanjeKlasa pitanje = new pitanjeKlasa()
             {
                 pitanje = pitanjeTextBox.Text,
-                razred = int.Parse(razredTtextBox.Text),
-                predmet = predmetTextBox.Text,
+                razred = int.Parse(razredComboBox.Text),
+                predmet = predmetComboBox.Text,
                 točan = odgtTtextBox.Text,
                 odgovori = new List<string>() { odg1TextBox.Text, odg2TtextBox.Text, odg3TextBox.Text, odgtTtextBox.Text}
             };

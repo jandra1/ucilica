@@ -23,6 +23,8 @@ namespace Ucilica
         int brojac = 0;
         int bodovi = 0;
         int time = 0;
+        private System.Windows.Forms.Timer t;
+        private int timeElapsed;
         int gotovkviz = 0;
         string vrijeme = "";
         private SoundPlayer yay;
@@ -31,6 +33,7 @@ namespace Ucilica
         {
 
             InitializeComponent();
+            initializeTime();
             predmet = _predmet;
             razred = _razred;
             pitanja = db.getQuestionsByYearAndSubject(razred, predmet);
@@ -43,8 +46,10 @@ namespace Ucilica
 
         private void odgovor1_Click(object sender, EventArgs e)
         {
+            onemoguciGumbe();
             if (odgovor1.Text == trenutnoPitanje.točan)
             {
+                
                 odgovor1.BackColor = Color.Green;
                 odgovor1.Refresh();
                 yay.Play();
@@ -79,6 +84,7 @@ namespace Ucilica
 
         private void odgovor2_Click(object sender, EventArgs e)
         {
+            onemoguciGumbe();
             if (odgovor2.Text == trenutnoPitanje.točan)
             {
                 odgovor2.BackColor = Color.Green;
@@ -115,6 +121,7 @@ namespace Ucilica
 
         private void odgovor3_Click(object sender, EventArgs e)
         {
+            onemoguciGumbe();
             if (odgovor3.Text == trenutnoPitanje.točan)
             {
                 odgovor3.BackColor = Color.Green;
@@ -151,6 +158,7 @@ namespace Ucilica
 
         private void odgovor4_Click(object sender, EventArgs e)
         {
+            onemoguciGumbe();
             if (odgovor4.Text == trenutnoPitanje.točan)
             {
                 odgovor4.BackColor = Color.Green;
@@ -195,7 +203,7 @@ namespace Ucilica
                 Kraj f = new Kraj(bodovi, vrijeme);
                 f.Show();
             }
-
+            omoguciGumbe();
             odgovor1.BackColor = Color.FromKnownColor(KnownColor.Control);
             odgovor2.BackColor = Color.FromKnownColor(KnownColor.Control);
             odgovor3.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -208,6 +216,7 @@ namespace Ucilica
             trenutnoPitanje = pitanja[i];
             pitanja.RemoveAt(i);
             pitanjeTextBox.Text = trenutnoPitanje.pitanje;
+            timer.Focus();
             List<string> odgovori = trenutnoPitanje.odgovori;
             int r = rnd.Next(0, odgovori.Count);
             odgovor1.Text = odgovori[r]; odgovori.RemoveAt(r);
@@ -219,12 +228,13 @@ namespace Ucilica
             if (trenutnoPitanje.slika != "") //otvori sliku u novom prozoru
             {
                 string imeSlike = trenutnoPitanje.slika;
-                Form f = new Form();
-                string ime = "..\\..\\pitanja i slike\\" + imeSlike;
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.Image = new Bitmap(ime);
+                pictureBox.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imeSlike);
+                pictureBox.Size = pictureBox.Image.Size;
+                Form f = new Form();
+                f.Size = pictureBox.Image.Size;
                 f.Controls.Add(pictureBox);
-                //f.ShowDialog();
+                f.Show();
             }
             ++brojac;
         }
@@ -235,14 +245,14 @@ namespace Ucilica
             this.Close();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+       /* private void timer1_Tick(object sender, EventArgs e)
         {
             ++time;
             var t = time;
             if(t < 60)
             {
                 vrijeme = t.ToString() + " s";
-                label3.Text = t.ToString() + " s";
+                timer.Text = t.ToString() + " s";
             }
             else
             {
@@ -253,13 +263,47 @@ namespace Ucilica
                     ++minute;
                 }
                 vrijeme = minute.ToString() + " min " + t.ToString() + " s";
-                label3.Text = minute.ToString() + " min " + t.ToString() + " s";
+                timer.Text = minute.ToString() + " min " + t.ToString() + " s";
             }
 
             if (gotovkviz == 1)
             {
                 timer1.Enabled = false;
             }
+        }*/
+        private void initializeTime()
+        {
+            timeElapsed = 0;
+            TimeSpan timespan = TimeSpan.FromMilliseconds(timeElapsed);
+            timer.Text = "Vrijeme: " + timespan.ToString(@"mm\:ss");
+            t = new System.Windows.Forms.Timer();
+            t.Tick += new EventHandler(t_Tick);
+            t.Interval = 1000;
+            t.Start();
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            timeElapsed += t.Interval;
+            TimeSpan timespan = TimeSpan.FromMilliseconds(timeElapsed);
+            timer.Text = "Vrijeme: " + timespan.ToString(@"mm\:ss");
+        }
+
+        private void omoguciGumbe()
+        {
+            odgovor1.Enabled = true;
+            odgovor2.Enabled = true;
+            odgovor3.Enabled = true;
+            odgovor4.Enabled = true;
+        }
+
+        private void onemoguciGumbe()
+        {
+            odgovor1.Enabled = false;
+            odgovor2.Enabled = false;
+            odgovor3.Enabled = false;
+            odgovor4.Enabled = false;
+
         }
     }
 }

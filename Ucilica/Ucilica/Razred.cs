@@ -12,17 +12,20 @@ namespace Ucilica
 {
     public partial class Razred : Form
     {
-        dataBase db = new dataBase();
         List<string> predmeti = new List<string>();
         public Razred()
         {
             InitializeComponent();
-            //predmeti = db.getTableNames();
-            predmeti.Add("geografija");
-            predmeti.Add("matematika");
-            predmeti.Add("hrvatski");
-            predmeti.Add("povijest");
-            foreach(string predmet in predmeti) predmetiComboBox.Items.Add(predmet);
+            predmetiComboBox.Items.Add("geografija");
+            predmetiComboBox.Items.Add("matematika");
+            predmetiComboBox.Items.Add("hrvatski");
+            predmetiComboBox.Items.Add("povijest");
+
+            razredComboBox.Items.Add("5");
+            razredComboBox.Items.Add("6");
+            razredComboBox.Items.Add("7");
+            razredComboBox.Items.Add("8");
+
 
             label4.Text = Form1.name + ", dobrodošao!";
         }
@@ -30,7 +33,7 @@ namespace Ucilica
         private void button1_Click(object sender, EventArgs e)
         {
             string predmet = predmetiComboBox.Text;
-            Pitanje pitanje = new Pitanje(int.Parse(textBox1.Text), predmet);
+            Pitanje pitanje = new Pitanje(int.Parse(razredComboBox.Text), predmet);
             pitanje.Show();
             
         }
