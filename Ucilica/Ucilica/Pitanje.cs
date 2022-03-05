@@ -96,7 +96,7 @@ namespace Ucilica
 
         private void odgovor4_Click(object sender, EventArgs e)
         {
-            if (odgovor3.Text == trenutnoPitanje.točan)
+            if (odgovor4.Text == trenutnoPitanje.točan)
             {
                 odgovor3.BackColor = Color.Green;
                 yay.Play();
@@ -118,6 +118,7 @@ namespace Ucilica
             {
                 //kraj kviza
             }
+            bodoviLabel.Text = "Bodovi: " + bodovi;
             odgovor1.BackColor = Color.FromKnownColor(KnownColor.Control);
             odgovor2.BackColor = Color.FromKnownColor(KnownColor.Control);
             odgovor3.BackColor = Color.FromKnownColor(KnownColor.Control);
