@@ -198,6 +198,7 @@ namespace Ucilica
             if (brojac >= 9)
             {
                 gotovkviz = 1;
+                vrijeme = timer.Text;
                 //kraj kviza
                 this.Close();
                 Kraj f = new Kraj(bodovi, vrijeme);

@@ -43,7 +43,7 @@ namespace Ucilica
             // pitanjeTextBox
             // 
             this.pitanjeTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pitanjeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.pitanjeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.pitanjeTextBox.Location = new System.Drawing.Point(39, 76);
             this.pitanjeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pitanjeTextBox.Multiline = true;
