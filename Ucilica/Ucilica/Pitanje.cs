@@ -38,13 +38,6 @@ namespace Ucilica
             yay = new SoundPlayer(Properties.Resources.yay);
             wrong = new SoundPlayer(Properties.Resources.wrong);
             sljedećePitanje();
-            Form f = new Form();
-            string imeSlike = "zupanijeHRVmms";// + imeSlike;
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imeSlike);
-            f.Controls.Add(pictureBox);
-            f.ShowDialog();
-
         }
 
         private void odgovor1_Click(object sender, EventArgs e)
@@ -143,9 +136,11 @@ namespace Ucilica
             if (trenutnoPitanje.slika != "") //otvori sliku u novom prozoru
             {
                 string imeSlike = trenutnoPitanje.slika;
-                Form f = new Form();
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imeSlike);
+                pictureBox.Size = pictureBox.Image.Size;
+                Form f = new Form();
+                f.Size = pictureBox.Image.Size;
                 f.Controls.Add(pictureBox);
                 f.ShowDialog();
             }
