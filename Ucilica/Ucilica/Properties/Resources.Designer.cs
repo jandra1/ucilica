@@ -93,6 +93,16 @@ namespace Ucilica.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap koordinatnisustav {
+            get {
+                object obj = ResourceManager.GetObject("koordinatnisustav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pbooks {
             get {
                 object obj = ResourceManager.GetObject("pbooks", resourceCulture);
@@ -133,6 +143,16 @@ namespace Ucilica.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap svijet_mms {
+            get {
+                object obj = ResourceManager.GetObject("svijet_mms", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ucionica {
             get {
                 object obj = ResourceManager.GetObject("ucionica", resourceCulture);
@@ -155,6 +175,16 @@ namespace Ucilica.Properties {
         internal static System.IO.UnmanagedMemoryStream yay {
             get {
                 return ResourceManager.GetStream("yay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zupanijeHRVmms {
+            get {
+                object obj = ResourceManager.GetObject("zupanijeHRVmms", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

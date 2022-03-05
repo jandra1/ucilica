@@ -38,7 +38,13 @@ namespace Ucilica
             yay = new SoundPlayer(Properties.Resources.yay);
             wrong = new SoundPlayer(Properties.Resources.wrong);
             sljedećePitanje();
-            
+            Form f = new Form();
+            string imeSlike = "zupanijeHRVmms";// + imeSlike;
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imeSlike);
+            f.Controls.Add(pictureBox);
+            f.ShowDialog();
+
         }
 
         private void odgovor1_Click(object sender, EventArgs e)
@@ -105,7 +111,7 @@ namespace Ucilica
             }
             else
             {
-                odgovor3.BackColor = Color.Red;
+                odgovor4.BackColor = Color.Red;
                 wrong.Play();
                 if (odgovor2.Text == trenutnoPitanje.točan) odgovor2.BackColor = Color.Green;
                 else if (odgovor3.Text == trenutnoPitanje.točan) odgovor3.BackColor = Color.Green;
@@ -138,11 +144,10 @@ namespace Ucilica
             {
                 string imeSlike = trenutnoPitanje.slika;
                 Form f = new Form();
-                string ime = "..\\..\\pitanja i slike\\" + imeSlike;
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.Image = new Bitmap(ime);
+                pictureBox.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imeSlike);
                 f.Controls.Add(pictureBox);
-                //f.ShowDialog();
+                f.ShowDialog();
             }
             ++brojac;
         }
@@ -153,7 +158,6 @@ namespace Ucilica
             TimeSpan timespan = TimeSpan.FromMilliseconds(timeElapsed);
             time.Text = "Vrijeme: " + timespan.ToString(@"mm\:ss");
             t = new Timer();
-            //t = new Timer();
             t.Tick += new EventHandler(t_Tick);
             t.Interval = 1000;
             t.Start();
