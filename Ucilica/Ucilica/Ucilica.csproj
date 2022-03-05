@@ -163,6 +163,9 @@
     <Content Include="login.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\zupanijeHRVmms.png" />
+    <None Include="Resources\svijet-mms.png" />
+    <None Include="Resources\koordinatnisustav.png" />
     <None Include="Resources\wrong.wav" />
     <None Include="Resources\yay.wav" />
     <None Include="Resources\pppbooks.png" />
