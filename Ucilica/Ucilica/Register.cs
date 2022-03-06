@@ -68,45 +68,11 @@ namespace Ucilica
             {
                 MessageBox.Show("Uspješno dodano!");
             }
+        }
 
-           /* try  // spajanje na bazu
-            {
-                con.Open();
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-                OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from login where Username='" + textBox1.Text + "'", con);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if (dt.Rows[0][0].ToString() == "1")  // ako je pronašao u bazi uneseni username obavijesti šefa (jer username mora biti jedinstven)
-                {
-                    MessageBox.Show("Taj username već postoji!");
-                    return;
-                }
-
-                OleDbDataAdapter sd = new OleDbDataAdapter("select count(*) from login where Password=" + textBox2.Text, con);
-                DataTable dta = new DataTable();
-                sd.Fill(dta);
-                if (dta.Rows[0][0].ToString() == "1")  // analogno kao za username
-                {
-                    MessageBox.Show("Ta lozinka je zauzeta!");
-                    return;
-
-                }
-
-                else  // ako je sve u redu, dodaj korisnika u bazu
-                {
-                    OleDbCommand comm = new OleDbCommand();
-                    comm.Connection = con;
-                    comm.CommandText = "insert into login ([Username], [Password]) values('" + textBox1.Text + "'," + textBox2.Text + ")";
-                    comm.ExecuteNonQuery();
-                    MessageBox.Show("Uspješno dodano!");
-                    con.Close();
-                }
-            }
-
-            catch (Exception ex)  // ako spajanje na bazu nije uspjelo javi error
-            {
-                MessageBox.Show("Error: " + ex);
-            }*/
         }
     }
 }
