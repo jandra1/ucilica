@@ -44,11 +44,7 @@ namespace Ucilica
             this.label1.Location = new System.Drawing.Point(45, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-<<<<<<< HEAD
-            this.label1.Size = new System.Drawing.Size(134, 16);
-=======
             this.label1.Size = new System.Drawing.Size(204, 20);
->>>>>>> cdeebd048b63c934733bfec668a69438664fb510
             this.label1.TabIndex = 0;
             this.label1.Text = "Unesi korisničko ime:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -61,34 +57,19 @@ namespace Ucilica
             this.label2.Location = new System.Drawing.Point(109, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-<<<<<<< HEAD
-            this.label2.Size = new System.Drawing.Size(89, 16);
-=======
-            this.label2.Size = new System.Drawing.Size(140, 20);
->>>>>>> cdeebd048b63c934733bfec668a69438664fb510
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Unesi lozinku:";
             // 
             // button2
             // 
-<<<<<<< HEAD
             this.button2.Location = new System.Drawing.Point(328, 129);
-=======
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Font = new System.Drawing.Font("Broadway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(307, 136);
->>>>>>> cdeebd048b63c934733bfec668a69438664fb510
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 31);
             this.button2.TabIndex = 3;
             this.button2.Text = "Registriraj se";
-<<<<<<< HEAD
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-=======
-            this.button2.UseVisualStyleBackColor = false;
->>>>>>> cdeebd048b63c934733bfec668a69438664fb510
             // 
             // textBox1
             // 
@@ -118,11 +99,7 @@ namespace Ucilica
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-<<<<<<< HEAD
-=======
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
->>>>>>> cdeebd048b63c934733bfec668a69438664fb510
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);

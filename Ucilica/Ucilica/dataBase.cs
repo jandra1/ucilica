@@ -162,7 +162,7 @@ namespace Ucilica
             {
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("insert into " + q.predmet + " ([pitanja],[odg_1],[odg_2],[odg_3],[odg_t],[razred],[slika]) values('" +
-                   q.pitanje + "','" + q.odgovori[0] + "'," + q.odgovori[1] + ",'" + q.odgovori[2] + "','" + q.točan + "'," + q.razred + ",'" + q.slika + "')", con);
+                   q.pitanje + "','" + q.odgovori[0] + "','" + q.odgovori[1] + "','" + q.odgovori[2] + "','" + q.točan + "'," + q.razred + ",'" + q.slika + "')", con);
                 int inserted = cmd.ExecuteNonQuery();
                 Console.WriteLine("ubaceno redaka " + inserted);
                 con.Close();
@@ -196,36 +196,51 @@ namespace Ucilica
             }
         }
 
-        public List<string> getTableNames() //ovo ne radi
+        List<Tuple<string, int, string>> getScoresBySubjectAndYear(string subject, int year)
         {
+            List<Tuple<string,int, string>> ret = new List<Tuple<string, int, string>>();
+
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
-            List<string> tableNames = new List<string>();
             try
             {
                 con.Open();
-                /*String[] tblrestrictions = new String[] { "Nothing", "Nothing", "Nothing", "TABLE" };
-                DataTable dt = con.GetSchema("tables", tblrestrictions);*/
-                OleDbDataAdapter sda = new OleDbDataAdapter("select MSysObjects.name from MSysObjects where MSysObjects.type In(1, 4, 6) "+
-                    "and MSysObjects.name not like '~*' and MSysObjects.name not like 'MSys*' order by MSysObjects.name", con);
+
+                OleDbDataAdapter sda = new OleDbDataAdapter("select korisnik, bodovi, vrijeme from bodovi where predmet = "+ subject +"razred = " + year.ToString(), con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Console.WriteLine("novo");
-                    if(row[0].ToString() != "login")
-                    {
-                        Console.WriteLine(row[0].ToString());
-                        tableNames.Add(row[0].ToString());
-                    }
+                    ret.Add(new Tuple<string, int, string>(row[0].ToString(), int.Parse(row[1].ToString()), row[2].ToString()));
                 }
                 con.Close();
-                return tableNames;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return tableNames;
             }
+
+            return ret;
+        }
+
+        bool insertNewScore(string subject, int year, string user, int score, string time)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("insert into bodovi ([korisnik],[razred],[predmet],[bodovi],[vrijeme]) values('" +
+                   user + "'," + year + ",'" + subject + "'," + score + ",'" + time + "')", con);
+                int inserted = cmd.ExecuteNonQuery();
+                Console.WriteLine("ubaceno redaka " + inserted);
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
         }
     
     }
