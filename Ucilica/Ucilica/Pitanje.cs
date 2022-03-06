@@ -31,6 +31,8 @@ namespace Ucilica
         string vrijeme = "";
         private SoundPlayer yay;
         private SoundPlayer wrong;
+        PictureBox pictureBox;
+        Form f;
         public Pitanje(int _razred, string _predmet, string _user)
         {
 
@@ -52,12 +54,12 @@ namespace Ucilica
             onemoguciGumbe();
             if (odgovor1.Text == trenutnoPitanje.točan)
             {
-                
                 odgovor1.BackColor = Color.Green;
                 odgovor1.Refresh();
                 yay.Play();
-                bodovi += 10;
-                Thread.Sleep(6000);
+                bodovi += 10-numOfHints*3;
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
             else
@@ -80,7 +82,8 @@ namespace Ucilica
                     odgovor4.BackColor = Color.Green;
                     odgovor4.Refresh();
                 }
-                Thread.Sleep(6000);
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
         }
@@ -93,8 +96,9 @@ namespace Ucilica
                 odgovor2.BackColor = Color.Green;
                 odgovor2.Refresh();
                 yay.Play();
-                bodovi += 10;
-                Thread.Sleep(6000);
+                bodovi += 10 - numOfHints * 3;
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
             else
@@ -117,7 +121,8 @@ namespace Ucilica
                     odgovor4.BackColor = Color.Green;
                     odgovor4.Refresh();
                 }
-                Thread.Sleep(6000);
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
         }
@@ -130,8 +135,9 @@ namespace Ucilica
                 odgovor3.BackColor = Color.Green;
                 odgovor3.Refresh();
                 yay.Play();
-                bodovi += 10;
-                Thread.Sleep(6000);
+                bodovi += 10 - numOfHints * 3;
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
             else
@@ -154,7 +160,8 @@ namespace Ucilica
                     odgovor1.BackColor = Color.Green;
                     odgovor1.Refresh();
                 }
-                Thread.Sleep(6000);
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
         }
@@ -167,8 +174,9 @@ namespace Ucilica
                 odgovor4.BackColor = Color.Green;
                 odgovor4.Refresh();
                 yay.Play();
-                bodovi += 10;
-                Thread.Sleep(6000);
+                bodovi += 10 - numOfHints * 3;
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
             else
@@ -191,7 +199,8 @@ namespace Ucilica
                     odgovor1.BackColor = Color.Green;
                     odgovor1.Refresh();
                 }
-                Thread.Sleep(6000);
+                Thread.Sleep(5000);
+                if (trenutnoPitanje.slika != "") f.Hide();
                 sljedećePitanje();
             }
         }
@@ -204,10 +213,10 @@ namespace Ucilica
                 vrijeme = timer.Text;
                 //kraj kviza
                 this.Close();
-                Kraj f = new Kraj(bodovi-numOfHints*3, vrijeme, predmet, razred, user);
+                Kraj f = new Kraj(bodovi, vrijeme, predmet, razred, user);
                 f.Show();
             }
-            hintButton.Enabled = false;
+            hintButton.Enabled = true;
             numOfHints = 0;
             omoguciGumbe();
             odgovor1.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -223,7 +232,7 @@ namespace Ucilica
             pitanja.RemoveAt(i);
             pitanjeTextBox.Text = trenutnoPitanje.pitanje;
             timer.Focus();
-            List<string> odgovori = trenutnoPitanje.odgovori;
+            List<string> odgovori = new List<string>() { trenutnoPitanje.odgovori[0], trenutnoPitanje.odgovori[1], trenutnoPitanje.odgovori[2], trenutnoPitanje.odgovori[3] }; //trenutnoPitanje.odgovori;
             int r = rnd.Next(0, odgovori.Count);
             odgovor1.Text = odgovori[r]; odgovori.RemoveAt(r);
             r = rnd.Next(0, odgovori.Count);
@@ -234,10 +243,10 @@ namespace Ucilica
             if (trenutnoPitanje.slika != "") //otvori sliku u novom prozoru
             {
                 string imeSlike = trenutnoPitanje.slika;
-                PictureBox pictureBox = new PictureBox();
+                pictureBox = new PictureBox();
                 pictureBox.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imeSlike);
                 pictureBox.Size = pictureBox.Image.Size;
-                Form f = new Form();
+                f = new Form();
                 f.Size = pictureBox.Image.Size;
                 f.Controls.Add(pictureBox);
                 f.Show();
@@ -316,8 +325,11 @@ namespace Ucilica
         {
             ++numOfHints;
             hintButton.Enabled = false;
-            int r = rnd.Next(trenutnoPitanje.odgovori.Count-1);
+            Console.WriteLine(trenutnoPitanje.odgovori.Count);
+            int r = rnd.Next(0, trenutnoPitanje.odgovori.Count-1);
+            Console.WriteLine(r);
             string odg = trenutnoPitanje.odgovori[r];
+            Console.WriteLine(odg);
             if(odgovor1.Text == odg)
             {
                 odgovor1.Enabled = false;

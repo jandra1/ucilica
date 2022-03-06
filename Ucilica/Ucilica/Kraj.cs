@@ -18,7 +18,7 @@ namespace Ucilica
             label4.Text = time;
             label2.Text = b + "/90";
             dataBase db = new dataBase();
-            db.insertNewScore(predmet, razred, ime, b, time);
+           // db.insertNewScore(predmet, razred, ime, b, time);
         }
 
         private void button1_Click(object sender, EventArgs e)

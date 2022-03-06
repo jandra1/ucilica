@@ -33,7 +33,7 @@ namespace Ucilica
         private void button1_Click(object sender, EventArgs e)
         {
             string predmet = predmetiComboBox.Text;
-            Pitanje pitanje = new Pitanje(int.Parse(razredComboBox.Text), predmet);
+            Pitanje pitanje = new Pitanje(int.Parse(razredComboBox.Text), predmet, Form1.name);
             pitanje.Show();
             
         }
