@@ -98,3 +98,4 @@ C:\Users\Helena\Documents\mms\ucilica\Ucilica\Ucilica\bin\Debug\login.accdb
 C:\Users\Helena\Documents\mms\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.exe.config
 C:\Users\Helena\Documents\mms\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.exe
 C:\Users\Helena\Documents\mms\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.pdb
+F:\Ivona\5. godina faks\mms\project\Ucilica\Ucilica\obj\Debug\Ucilica.Kraj.resources
