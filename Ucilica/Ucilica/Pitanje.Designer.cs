@@ -38,6 +38,7 @@ namespace Ucilica
             this.timer = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.hintButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pitanjeTextBox
@@ -60,7 +61,7 @@ namespace Ucilica
             this.label1.Font = new System.Drawing.Font("Broadway", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
+            this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pitanje: ";
             // 
@@ -151,6 +152,17 @@ namespace Ucilica
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // hintButton
+            // 
+            this.hintButton.Font = new System.Drawing.Font("Broadway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hintButton.Location = new System.Drawing.Point(939, 433);
+            this.hintButton.Name = "hintButton";
+            this.hintButton.Size = new System.Drawing.Size(85, 39);
+            this.hintButton.TabIndex = 9;
+            this.hintButton.Text = "Hint";
+            this.hintButton.UseVisualStyleBackColor = true;
+            this.hintButton.Click += new System.EventHandler(this.hintButton_Click);
+            // 
             // Pitanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +170,7 @@ namespace Ucilica
             this.BackgroundImage = global::Ucilica.Properties.Resources.ucionica;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 487);
+            this.Controls.Add(this.hintButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.timer);
@@ -186,5 +199,6 @@ namespace Ucilica
         private System.Windows.Forms.Label timer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button hintButton;
     }
 }

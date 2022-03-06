@@ -196,7 +196,7 @@ namespace Ucilica
             }
         }
 
-        List<Tuple<string, int, string>> getScoresBySubjectAndYear(string subject, int year)
+        public List<Tuple<string, int, string>> getScoresBySubjectAndYear(string subject, int year)
         {
             List<Tuple<string,int, string>> ret = new List<Tuple<string, int, string>>();
 
@@ -222,7 +222,7 @@ namespace Ucilica
             return ret;
         }
 
-        bool insertNewScore(string subject, int year, string user, int score, string time)
+        public bool insertNewScore(string subject, int year, string user, int score, string time)
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try

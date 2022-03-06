@@ -16,6 +16,7 @@ namespace Ucilica
     {
         string predmet;
         int razred;
+        string user;
         List<pitanjeKlasa> pitanja;
         dataBase db = new dataBase();
         Random rnd = new Random();
@@ -23,19 +24,21 @@ namespace Ucilica
         int brojac = 0;
         int bodovi = 0;
         int time = 0;
+        int numOfHints = 1;
         private System.Windows.Forms.Timer t;
         private int timeElapsed;
         int gotovkviz = 0;
         string vrijeme = "";
         private SoundPlayer yay;
         private SoundPlayer wrong;
-        public Pitanje(int _razred, string _predmet)
+        public Pitanje(int _razred, string _predmet, string _user)
         {
 
             InitializeComponent();
             initializeTime();
             predmet = _predmet;
             razred = _razred;
+            user = _user;
             pitanja = db.getQuestionsByYearAndSubject(razred, predmet);
 
             yay = new SoundPlayer(Properties.Resources.yay);
@@ -201,9 +204,11 @@ namespace Ucilica
                 vrijeme = timer.Text;
                 //kraj kviza
                 this.Close();
-                Kraj f = new Kraj(bodovi, vrijeme);
+                Kraj f = new Kraj(bodovi-numOfHints*3, vrijeme, predmet, razred, user);
                 f.Show();
             }
+            hintButton.Enabled = false;
+            numOfHints = 0;
             omoguciGumbe();
             odgovor1.BackColor = Color.FromKnownColor(KnownColor.Control);
             odgovor2.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -305,6 +310,34 @@ namespace Ucilica
             odgovor3.Enabled = false;
             odgovor4.Enabled = false;
 
+        }
+
+        private void hintButton_Click(object sender, EventArgs e)
+        {
+            ++numOfHints;
+            hintButton.Enabled = false;
+            int r = rnd.Next(trenutnoPitanje.odgovori.Count-1);
+            string odg = trenutnoPitanje.odgovori[r];
+            if(odgovor1.Text == odg)
+            {
+                odgovor1.Enabled = false;
+                odgovor1.BackColor = Color.Black;
+            }
+            else if(odgovor2.Text == odg)
+            {
+                odgovor2.Enabled = false;
+                odgovor2.BackColor = Color.Black;
+            }
+            else if (odgovor3.Text == odg)
+            {
+                odgovor3.Enabled = false;
+                odgovor3.BackColor = Color.Black;
+            }
+            else
+            {
+                odgovor4.Enabled = false;
+                odgovor4.BackColor = Color.Black;
+            }
         }
     }
 }
