@@ -14,7 +14,7 @@ namespace Ucilica
     public partial class Register : Form
     {
 
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Ucilica\login.accdb");
+        //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
 
         public Register()
         {
@@ -48,8 +48,28 @@ namespace Ucilica
                 MessageBox.Show("lozinka mora sadržavati samo brojeve!");
                 return;
             }
+            dataBase db = new dataBase();
+            bool user = db.chackIfUserExists(textBox1.Text);
+            if (!user)
+            {
+                MessageBox.Show("Taj username već postoji!");
+                return;
+            }
 
-            try  // spajanje na bazu
+            bool pass = db.checkIfPassExists(textBox2.Text);
+            if(!pass)
+            {
+                MessageBox.Show("Ta lozinka je zauzeta!");
+                return;
+            }
+            
+            bool register  = db.register(textBox1.Text, textBox2.Text);
+            if (register)
+            {
+                MessageBox.Show("Uspješno dodano!");
+            }
+
+           /* try  // spajanje na bazu
             {
                 con.Open();
 
@@ -72,7 +92,7 @@ namespace Ucilica
 
                 }
 
-                else  // ako je sve u redu, dodaj radnika u bazu
+                else  // ako je sve u redu, dodaj korisnika u bazu
                 {
                     OleDbCommand comm = new OleDbCommand();
                     comm.Connection = con;
@@ -86,7 +106,7 @@ namespace Ucilica
             catch (Exception ex)  // ako spajanje na bazu nije uspjelo javi error
             {
                 MessageBox.Show("Error: " + ex);
-            }
+            }*/
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Ucilica
     {
 
         public static string name = "";   // u njoj ćemo pamtiti username osobe koja će se ulogirati
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+        //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
 
         public Form1()
         {
@@ -44,11 +44,34 @@ namespace Ucilica
                 return;
             }
 
-            try   // povezivanje s bazom koja sadrži login podatke o korisnicima
+            dataBase db = new dataBase();
+            int login = db.login(textBox1.Text, textBox2.Text);
+            name = textBox1.Text;
+            if (login == 0) // krivi podaci
+            {
+                MessageBox.Show("Unesite ispravne podatke!");
+            }
+            else if(login == 1) //uspješan login korisnika
+            {
+                this.Hide();
+                Razred m = new Razred();  // korisnik se uspješno ulogirao - ulazi na glavnu "stranicu"
+                m.Show();
+            }
+            else if(login == -1) //login admina
+            {
+                this.Hide();
+                Admin a = new Admin();  // admin se uspješno ulogirao - ulazi na admin stranicu
+                a.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error:");
+            }
+
+
+            /*try   // povezivanje s bazom koja sadrži login podatke o korisnicima
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("select ID, Username, Password from login", con);
-
                 OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from login where Username='" + textBox1.Text + "' and Password=" + textBox2.Text, con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -84,7 +107,7 @@ namespace Ucilica
             {
                 MessageBox.Show("Error: " + ex);
 
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,7 +117,7 @@ namespace Ucilica
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Register n = new Register();  // korisnik se uspješno ulogirao - ulazi na glavnu "stranicu"
+            Register n = new Register();  //idi na registraciju
             n.Show();
         }
     }

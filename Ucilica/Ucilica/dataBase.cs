@@ -10,6 +10,116 @@ namespace Ucilica
 {
     internal class dataBase
     {
+
+        public bool register(string user, string pass)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbCommand comm = new OleDbCommand();
+                comm.Connection = con;
+                comm.CommandText = "insert into login ([Username], [Password]) values('" + user + "'," + pass + ")";
+                comm.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+            return true;
+            
+        }
+
+        public int login(string user, string pass)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from login where Username='" + user + "' and Password=" + pass, con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")   // ako vrijedi znači da u bazi postoji točno jedna osoba koja zadovoljava tražene uvjete (naveden username i lozinku)
+                {
+
+                    if (user == "admin")
+                    {
+                        con.Close();  // obavezno zatvaramo vezu s bazom
+                        return -1;
+                    }
+                    else
+                    {
+                        con.Close();  // obavezno zatvaramo vezu s bazom
+                        return 1;
+                    }
+                }
+
+                else
+                {
+                    con.Close();
+                    return 0;
+                }
+            }
+            
+
+            catch (Exception ex)  // ako povezivanje s bazom nije uspjelo - javi error
+            {
+                return -2;
+
+            }
+        }
+
+        public bool checkIfPassExists(string pass)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sd = new OleDbDataAdapter("select count(*) from login where Password=" + pass, con);
+                DataTable dta = new DataTable();
+                sd.Fill(dta);
+                if (dta.Rows[0][0].ToString() == "1") //u bazi već postoji ta lozinka
+                {
+                    return false;
+
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+           
+            return true;
+        }
+
+        public bool chackIfUserExists(string user)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+
+                OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from login where Username='" + user + "'", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1") //u bazi već postoji taj username
+                    return false;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+            return true;
+        }
+
         public List<pitanjeKlasa> getQuestionsByYearAndSubject(int year, string subject)
         {
             List<pitanjeKlasa> ret = new List<pitanjeKlasa>();
