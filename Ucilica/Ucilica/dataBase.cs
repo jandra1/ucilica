@@ -205,7 +205,7 @@ namespace Ucilica
             {
                 con.Open();
 
-                OleDbDataAdapter sda = new OleDbDataAdapter("select korisnik, bodovi, vrijeme from bodovi where predmet = "+ subject +"razred = " + year.ToString(), con);
+                OleDbDataAdapter sda = new OleDbDataAdapter("select top 10 korisnik, bodovi, vrijeme from bodovi where predmet='" + subject +"' and razred=" + year.ToString() + " order by bodovi desc ,vrijeme desc", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 foreach (DataRow row in dt.Rows)

@@ -54,6 +54,12 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bodovi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodovi.Designer.cs">
+      <DependentUpon>Bodovi.cs</DependentUpon>
+    </Compile>
     <Compile Include="dataBase.cs" />
     <Compile Include="Dodaj.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodovi.resx">
+      <DependentUpon>Bodovi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dodaj.resx">
       <DependentUpon>Dodaj.cs</DependentUpon>

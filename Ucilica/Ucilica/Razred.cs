@@ -44,5 +44,11 @@ namespace Ucilica
             Form1 f = new Form1();
             f.Show(); // ponovno otvori login formu kako bi se drugi radnik mogao ulogirati
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Bodovi bodovi = new Bodovi();
+            bodovi.Show();
+        }
     }
 }

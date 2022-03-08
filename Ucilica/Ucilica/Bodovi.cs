@@ -30,12 +30,14 @@ namespace Ucilica
 
         private void razredComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            changeTable();
+            if(predmetComboBox.Text != "")
+                changeTable();
         }
 
         private void predmetComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            changeTable();
+            if (razredComboBox.Text != "")
+                changeTable();
         }
 
         void changeTable()
@@ -48,11 +50,20 @@ namespace Ucilica
             foreach(var rez in bodovi)
             {
                 Label user = new Label();
+                user.Dock = DockStyle.Fill;
                 user.Text = rez.Item1;
+                user.TextAlign = ContentAlignment.MiddleCenter;
+                user.Font = new Font(user.Font.Name, 9);
                 Label score = new Label();
+                score.Dock = DockStyle.Fill;
                 score.Text = rez.Item2.ToString();
+                score.TextAlign = ContentAlignment.MiddleCenter;
+                score.Font = new Font(user.Font.Name, 9);
                 Label time = new Label();
+                time.Dock = DockStyle.Fill;
                 time.Text = rez.Item3;
+                time.TextAlign = ContentAlignment.MiddleCenter;
+                time.Font = new Font(user.Font.Name, 9);
                 tableLayoutPanel1.Controls.AddRange(new Control[] { user, score, time });
             }
         }
