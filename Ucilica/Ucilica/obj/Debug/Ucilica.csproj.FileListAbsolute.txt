@@ -16,3 +16,4 @@ C:\Users\john\source\repos\jandra1\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.exe
 C:\Users\john\source\repos\jandra1\ucilica\Ucilica\Ucilica\bin\Debug\Ucilica.pdb
 C:\Users\john\source\repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.exe
 C:\Users\john\source\repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.pdb
+C:\Users\john\source\repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Bodovi.resources
