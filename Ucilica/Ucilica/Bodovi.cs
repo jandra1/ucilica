@@ -53,17 +53,17 @@ namespace Ucilica
                 user.Dock = DockStyle.Fill;
                 user.Text = rez.Item1;
                 user.TextAlign = ContentAlignment.MiddleCenter;
-                user.Font = new Font(user.Font.Name, 9);
+                user.Font = label1.Font;//new Font(user.Font.Name, 9);
                 Label score = new Label();
                 score.Dock = DockStyle.Fill;
                 score.Text = rez.Item2.ToString();
                 score.TextAlign = ContentAlignment.MiddleCenter;
-                score.Font = new Font(user.Font.Name, 9);
+                score.Font = label1.Font;//new Font(user.Font.Name, 9);
                 Label time = new Label();
                 time.Dock = DockStyle.Fill;
                 time.Text = rez.Item3;
                 time.TextAlign = ContentAlignment.MiddleCenter;
-                time.Font = new Font(user.Font.Name, 9);
+                time.Font = label1.Font;//new Font(user.Font.Name, 9);
                 tableLayoutPanel1.Controls.AddRange(new Control[] { user, score, time });
             }
         }

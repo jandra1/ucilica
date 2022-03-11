@@ -16,9 +16,10 @@ namespace Ucilica
         public Dodaj()
         {
             InitializeComponent();
-            predmetComboBox.Items.Add("geografija");
-            predmetComboBox.Items.Add("matematika");
             predmetComboBox.Items.Add("hrvatski");
+            predmetComboBox.Items.Add("matematika");
+            predmetComboBox.Items.Add("engleski");
+            predmetComboBox.Items.Add("geografija");
             predmetComboBox.Items.Add("povijest");
 
             razredComboBox.Items.Add("5");

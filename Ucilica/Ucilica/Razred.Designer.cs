@@ -54,10 +54,11 @@ namespace Ucilica
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(107, 116);
+            this.label2.Font = new System.Drawing.Font("Imprint MT Shadow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(78, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 16);
+            this.label2.Size = new System.Drawing.Size(130, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Odaberi razred:";
             // 
@@ -65,15 +66,17 @@ namespace Ucilica
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(107, 186);
+            this.label3.Font = new System.Drawing.Font("Imprint MT Shadow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(78, 186);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 16);
+            this.label3.Size = new System.Drawing.Size(147, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Odaberi predmet:";
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Imprint MT Shadow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(110, 246);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -87,26 +90,28 @@ namespace Ucilica
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Imprint MT Shadow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(105, 46);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(307, 29);
+            this.label4.Size = new System.Drawing.Size(415, 41);
             this.label4.TabIndex = 6;
             this.label4.Text = "Odabir razreda i predmeta";
             // 
             // predmetiComboBox
             // 
             this.predmetiComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.predmetiComboBox.Font = new System.Drawing.Font("Imprint MT Shadow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.predmetiComboBox.FormattingEnabled = true;
             this.predmetiComboBox.Location = new System.Drawing.Point(248, 186);
             this.predmetiComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.predmetiComboBox.Name = "predmetiComboBox";
-            this.predmetiComboBox.Size = new System.Drawing.Size(132, 24);
+            this.predmetiComboBox.Size = new System.Drawing.Size(132, 26);
             this.predmetiComboBox.TabIndex = 7;
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Imprint MT Shadow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(176, 295);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
@@ -119,14 +124,16 @@ namespace Ucilica
             // razredComboBox
             // 
             this.razredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.razredComboBox.Font = new System.Drawing.Font("Imprint MT Shadow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.razredComboBox.FormattingEnabled = true;
             this.razredComboBox.Location = new System.Drawing.Point(248, 108);
             this.razredComboBox.Name = "razredComboBox";
-            this.razredComboBox.Size = new System.Drawing.Size(132, 24);
+            this.razredComboBox.Size = new System.Drawing.Size(132, 26);
             this.razredComboBox.TabIndex = 9;
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Imprint MT Shadow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(267, 246);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";

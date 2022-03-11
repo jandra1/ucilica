@@ -16,10 +16,12 @@ namespace Ucilica
         public Razred()
         {
             InitializeComponent();
-            predmetiComboBox.Items.Add("geografija");
-            predmetiComboBox.Items.Add("matematika");
             predmetiComboBox.Items.Add("hrvatski");
+            predmetiComboBox.Items.Add("matematika");
+            predmetiComboBox.Items.Add("engleski");
+            predmetiComboBox.Items.Add("geografija");
             predmetiComboBox.Items.Add("povijest");
+
 
             razredComboBox.Items.Add("5");
             razredComboBox.Items.Add("6");
