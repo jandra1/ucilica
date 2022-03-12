@@ -288,6 +288,21 @@ namespace Ucilica
 
             return ret;
         }
-    
+
+        public void changeUserName(string oldName, string newName)
+        {
+
+        }
+
+        public void changePass(string name, int newPass)
+        {
+
+        }
+
+        public void changeYear(string name, int year)
+        {
+
+        }
+
     }
 }

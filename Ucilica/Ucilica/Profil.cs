@@ -59,17 +59,109 @@ namespace Ucilica
 
         private void nameButton_Click(object sender, EventArgs e)
         {
-
+            Form f = new Form();
+            f.Width = 400;
+            f.Height = 200;
+            f.BackgroundImage = Properties.Resources.back1;
+            Label nameLabel = new Label();
+            nameLabel.AutoSize = true;
+            nameLabel.Text = "Novo ime";
+            nameLabel.Font = new Font(label1.Font.Name, 12);
+            nameLabel.BackColor = Color.Transparent;
+            nameLabel.Location = new Point(f.Width/2-nameLabel.Width-5, f.Height/2-50);
+            f.Controls.Add(nameLabel);
+            TextBox nameTextBox = new TextBox();
+            nameTextBox.Font = new Font(label1.Font.Name, 10);
+            nameTextBox.Location = new Point(f.Width/2, f.Height/2-50);
+            f.Controls.Add(nameTextBox);
+            Button changeButton = new Button();
+            changeButton.AutoSize = true;
+            changeButton.Text = "Promijeni!";
+            changeButton.Font = new Font(label1.Font.Name, 12);
+            changeButton.Location = new Point(f.Width/2-changeButton.Width/2, f.Height/2);
+            changeButton.Click += (_sender, _e) =>
+            {
+                if (nameTextBox.Text != "")
+                {
+                    dataBase db = new dataBase();
+                    db.changeUserName(_name, nameTextBox.Text);
+                }
+            };
+            f.Controls.Add(changeButton);
+            f.Show();
         }
 
         private void passButton_Click(object sender, EventArgs e)
         {
-
+            Form f = new Form();
+            f.Width = 400;
+            f.Height = 200;
+            f.BackgroundImage = Properties.Resources.back1;
+            Label passLabel = new Label();
+            passLabel.AutoSize = true;
+            passLabel.Text = "Nova lozinka";
+            passLabel.Font = new Font(label1.Font.Name, 12);
+            passLabel.BackColor = Color.Transparent;
+            passLabel.Location = new Point(f.Width / 2 - passLabel.Width - 5, f.Height / 2 - 50);
+            f.Controls.Add(passLabel);
+            TextBox passTextBox = new TextBox();
+            passTextBox.Font = new Font(label1.Font.Name, 10);
+            passTextBox.Location = new Point(f.Width / 2, f.Height / 2 - 50);
+            f.Controls.Add(passTextBox);
+            Button changeButton = new Button();
+            changeButton.AutoSize = true;
+            changeButton.Text = "Promijeni!";
+            changeButton.Font = new Font(label1.Font.Name, 12);
+            changeButton.Location = new Point(f.Width / 2 - changeButton.Width / 2, f.Height / 2);
+            changeButton.Click += (_sender, _e) =>
+            {
+                if (passTextBox.Text != "")
+                {
+                    dataBase db = new dataBase();
+                    db.changePass(_name, int.Parse(passTextBox.Text));
+                }
+            };
+            f.Controls.Add(changeButton);
+            f.Show();
         }
 
         private void yearButton_Click(object sender, EventArgs e)
         {
-
+            Form f = new Form();
+            f.Width = 400;
+            f.Height = 200;
+            f.BackgroundImage = Properties.Resources.back1;
+            Label yearLabel = new Label();
+            yearLabel.AutoSize = true;
+            yearLabel.Text = "Promijeni razred";
+            yearLabel.Font = new Font(label1.Font.Name, 12);
+            yearLabel.BackColor = Color.Transparent;
+            yearLabel.Location = new Point(f.Width / 2 - yearLabel.Width - 5, f.Height / 2 - 50);
+            f.Controls.Add(yearLabel);
+            ComboBox yearComboBox = new ComboBox();
+            yearComboBox.Items.Add("5");
+            yearComboBox.Items.Add("6");
+            yearComboBox.Items.Add("7");
+            yearComboBox.Items.Add("8");
+            yearComboBox.Font = new Font(label1.Font.Name, 10);
+            yearComboBox.Location = new Point(f.Width / 2, f.Height / 2 - 50);
+            yearComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            f.Controls.Add(yearComboBox);
+            Button changeButton = new Button();
+            changeButton.AutoSize = true;
+            changeButton.Text = "Promijeni!";
+            changeButton.Font = new Font(label1.Font.Name, 12);
+            changeButton.Location = new Point(f.Width / 2 - changeButton.Width / 2, f.Height / 2);
+            changeButton.Click += (_sender, _e) =>
+            {
+                if (yearComboBox.Text != "")
+                {
+                    dataBase db = new dataBase();
+                    db.changePass(_name, int.Parse(yearComboBox.Text));
+                }
+            };
+            f.Controls.Add(changeButton);
+            f.Show();
         }
 
     }
