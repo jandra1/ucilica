@@ -12,7 +12,6 @@ namespace Ucilica
 {
     public partial class Razred : Form
     {
-        List<string> predmeti = new List<string>();
         public Razred()
         {
             InitializeComponent();
@@ -27,6 +26,7 @@ namespace Ucilica
             razredComboBox.Items.Add("6");
             razredComboBox.Items.Add("7");
             razredComboBox.Items.Add("8");
+            if(Form1.razred != 0) razredComboBox.SelectedIndex = Form1.razred - razredComboBox.Items.Count-1;
 
 
             label4.Text = Form1.name + ", dobrodošao!";
@@ -51,6 +51,12 @@ namespace Ucilica
         {
             Bodovi bodovi = new Bodovi();
             bodovi.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Profil profil = new Profil(Form1.name, Form1.razred);
+            profil.Show();
         }
     }
 }

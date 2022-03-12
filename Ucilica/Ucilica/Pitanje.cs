@@ -42,6 +42,7 @@ namespace Ucilica
             razred = _razred;
             user = _user;
             pitanja = db.getQuestionsByYearAndSubject(razred, predmet);
+            foreach (var pit in pitanja) Console.WriteLine(pit.pitanje);
 
             yay = new SoundPlayer(Properties.Resources.yay);
             wrong = new SoundPlayer(Properties.Resources.wrong);

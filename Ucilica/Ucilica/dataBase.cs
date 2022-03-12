@@ -72,6 +72,27 @@ namespace Ucilica
             }
         }
 
+        public int getYearByUser(string user)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            int ret;
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sd = new OleDbDataAdapter("select Razred from login where Username='" + user+"'", con);
+                DataTable dta = new DataTable();
+                sd.Fill(dta);
+                ret = int.Parse(dta.Rows[0][0].ToString());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+            return ret;
+        }
+
         public bool checkIfPassExists(string pass)
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
@@ -241,6 +262,31 @@ namespace Ucilica
                 return false;
             }
 
+        }
+
+        public List<Tuple<int,string,int,string>> getResultsByName(string name)
+        {
+            List<Tuple<int,string,int,string>> ret = new List<Tuple<int,string,int,string>>();
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+
+                OleDbDataAdapter sda = new OleDbDataAdapter("select bodovi, vrijeme, predmet, razred from bodovi where korisnik='" + name + "'", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                foreach (DataRow row in dt.Rows)
+                {
+                    ret.Add(new Tuple<int,string,int, string>(int.Parse(row[3].ToString()), row[2].ToString(), int.Parse(row[0].ToString()),row[1].ToString()));
+                }
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return ret;
         }
     
     }

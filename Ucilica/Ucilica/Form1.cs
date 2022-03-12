@@ -15,6 +15,7 @@ namespace Ucilica
     {
 
         public static string name = "";   // u njoj ćemo pamtiti username osobe koja će se ulogirati
+        public static int razred = 0;
         public Form1()
         {
             this.MinimumSize = new System.Drawing.Size(400, 230);
@@ -51,6 +52,7 @@ namespace Ucilica
             }
             else if(login == 1) //uspješan login korisnika
             {
+                razred = db.getYearByUser(name);
                 this.Hide();
                 Razred m = new Razred();  // korisnik se uspješno ulogirao - ulazi na glavnu "stranicu"
                 m.Show();
