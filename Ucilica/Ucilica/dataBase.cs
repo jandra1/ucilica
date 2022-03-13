@@ -67,6 +67,7 @@ namespace Ucilica
 
             catch (Exception ex)  // ako povezivanje s bazom nije uspjelo - javi error
             {
+                Console.WriteLine(ex.Message);
                 return -2;
 
             }
@@ -291,17 +292,53 @@ namespace Ucilica
 
         public void changeUserName(string oldName, string newName)
         {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
 
+                OleDbCommand cmd = new OleDbCommand("update login set Username = '" + newName + "' where Username ='" + oldName+"'", con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         public void changePass(string name, int newPass)
         {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
 
+                OleDbCommand cmd = new OleDbCommand("update login set Password = " + newPass + " where Username ='" + name + "'", con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         public void changeYear(string name, int year)
         {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
 
+                OleDbCommand cmd = new OleDbCommand("update login set Razred = " + year + " where Username = '" + name + "'", con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
     }

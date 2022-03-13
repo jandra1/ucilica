@@ -85,10 +85,15 @@ namespace Ucilica
                 {
                     dataBase db = new dataBase();
                     db.changeUserName(_name, nameTextBox.Text);
+                    _name = nameTextBox.Text;
+                    label1.Text = _name;
+                    Form1.name = _name;
                 }
+                f.Hide();
             };
             f.Controls.Add(changeButton);
             f.Show();
+            Refresh();
         }
 
         private void passButton_Click(object sender, EventArgs e)
@@ -120,9 +125,11 @@ namespace Ucilica
                     dataBase db = new dataBase();
                     db.changePass(_name, int.Parse(passTextBox.Text));
                 }
+                f.Hide();
             };
             f.Controls.Add(changeButton);
             f.Show();
+            Refresh();
         }
 
         private void yearButton_Click(object sender, EventArgs e)
@@ -136,7 +143,7 @@ namespace Ucilica
             yearLabel.Text = "Promijeni razred";
             yearLabel.Font = new Font(label1.Font.Name, 12);
             yearLabel.BackColor = Color.Transparent;
-            yearLabel.Location = new Point(f.Width / 2 - yearLabel.Width - 5, f.Height / 2 - 50);
+            yearLabel.Location = new Point(f.Width / 2 - yearLabel.Width - 25, f.Height / 2 - 50);
             f.Controls.Add(yearLabel);
             ComboBox yearComboBox = new ComboBox();
             yearComboBox.Items.Add("5");
@@ -157,8 +164,12 @@ namespace Ucilica
                 if (yearComboBox.Text != "")
                 {
                     dataBase db = new dataBase();
-                    db.changePass(_name, int.Parse(yearComboBox.Text));
+                    db.changeYear(_name, int.Parse(yearComboBox.Text));
+                    _razred = int.Parse(yearComboBox.Text);
+                    label2.Text = _razred + ". razred";
+                    Form1.razred = _razred;
                 }
+                f.Hide();
             };
             f.Controls.Add(changeButton);
             f.Show();
