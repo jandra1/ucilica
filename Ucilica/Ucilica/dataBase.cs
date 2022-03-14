@@ -11,7 +11,7 @@ namespace Ucilica
     internal class dataBase
     {
 
-        public bool register(string user, string pass)
+        public bool register(string user, string pass, int year)
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -19,7 +19,7 @@ namespace Ucilica
                 con.Open();
                 OleDbCommand comm = new OleDbCommand();
                 comm.Connection = con;
-                comm.CommandText = "insert into login ([Username], [Password]) values('" + user + "'," + pass + ")";
+                comm.CommandText = "insert into login ([Username], [Password], [Razred]) values('" + user + "'," + pass + "," + year + ")";
                 comm.ExecuteNonQuery();
                 con.Close();
             }
@@ -189,27 +189,6 @@ namespace Ucilica
                 Console.WriteLine("ubaceno redaka " + inserted);
                 con.Close();
                // return true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                //return false;
-            }
-        }
-
-        public void addSubject(string subject)
-        {
-
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
-            try
-            {
-                con.Open();
-                OleDbCommand cmd = new OleDbCommand("create table " + subject + "(ID AutoIncrement PRIMARY KEY, pitanja TEXT, odg_1 TEXT, odg_2 TEXT, "+
-                  "odg_3 TEXT, odg_t TEXT, razred SMALLINT, slika TEXT)", con);
-                int inserted = cmd.ExecuteNonQuery();
-                Console.WriteLine("ubaceno redaka " + inserted);
-                con.Close();
-                // return true;
             }
             catch (Exception e)
             {

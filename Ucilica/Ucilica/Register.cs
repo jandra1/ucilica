@@ -18,6 +18,10 @@ namespace Ucilica
         {
             this.MinimumSize = new System.Drawing.Size(440, 220);
             InitializeComponent();
+            comboBox1.Items.Add("5");
+            comboBox1.Items.Add("6");
+            comboBox1.Items.Add("7");
+            comboBox1.Items.Add("8");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,8 +64,9 @@ namespace Ucilica
                 MessageBox.Show("Ta lozinka je zauzeta!");
                 return;
             }
-            
-            bool register  = db.register(textBox1.Text, textBox2.Text);
+            int year = 0;
+            if(comboBox1.Text != "") year = int.Parse(comboBox1.Text);
+            bool register  = db.register(textBox1.Text, textBox2.Text, year);
             if (register)
             {
                 MessageBox.Show("Uspješno dodano!");
