@@ -193,6 +193,7 @@
     <Content Include="login.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\soundoff.png" />
     <None Include="Resources\ppppribor.png" />
     <None Include="Resources\ppribor.png" />
     <None Include="Resources\books2.png" />

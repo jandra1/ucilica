@@ -12,6 +12,7 @@ namespace Ucilica
 {
     public partial class Razred : Form
     {
+        public static int ukljucen = 1;
         public Razred()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace Ucilica
 
 
             label4.Text = Form1.name + ", dobrodošao!";
+            //button5.BackgroundImage = 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +59,20 @@ namespace Ucilica
         {
             Profil profil = new Profil(Form1.name, Form1.razred);
             profil.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (ukljucen == 1)
+            {
+                ukljucen = 0;
+                button5.BackColor = Color.Blue;
+            }
+            else
+            {
+                ukljucen = 1;
+                button5.BackColor = Color.Transparent;
+            }
         }
     }
 }

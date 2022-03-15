@@ -57,7 +57,8 @@ namespace Ucilica
             {
                 odgovor1.BackColor = Color.Green;
                 odgovor1.Refresh();
-                yay.Play();
+                if(Razred.ukljucen == 1)
+                    yay.Play();
                 bodovi += 10-numOfHints*3;
                 Thread.Sleep(5000);
                 if (trenutnoPitanje.slika != "") f.Hide();
@@ -67,7 +68,8 @@ namespace Ucilica
             {
                 odgovor1.BackColor = Color.Red;
                 odgovor1.Refresh();
-                wrong.Play();
+                if(Razred.ukljucen == 1)
+                    wrong.Play();
                 if (odgovor2.Text == trenutnoPitanje.točan)
                 {
                     odgovor2.BackColor = Color.Green;
@@ -96,7 +98,8 @@ namespace Ucilica
             {
                 odgovor2.BackColor = Color.Green;
                 odgovor2.Refresh();
-                yay.Play();
+                if (Razred.ukljucen == 1)
+                    yay.Play();
                 bodovi += 10 - numOfHints * 3;
                 Thread.Sleep(5000);
                 if (trenutnoPitanje.slika != "") f.Hide();
@@ -106,7 +109,8 @@ namespace Ucilica
             {
                 odgovor2.BackColor = Color.Red;
                 odgovor2.Refresh();
-                wrong.Play();
+                if (Razred.ukljucen == 1)
+                    wrong.Play();
                 if (odgovor1.Text == trenutnoPitanje.točan)
                 {
                     odgovor1.BackColor = Color.Green;
@@ -135,7 +139,8 @@ namespace Ucilica
             {
                 odgovor3.BackColor = Color.Green;
                 odgovor3.Refresh();
-                yay.Play();
+                if (Razred.ukljucen == 1)
+                    yay.Play();
                 bodovi += 10 - numOfHints * 3;
                 Thread.Sleep(5000);
                 if (trenutnoPitanje.slika != "") f.Hide();
@@ -145,7 +150,8 @@ namespace Ucilica
             {
                 odgovor3.BackColor = Color.Red;
                 odgovor3.Refresh();
-                wrong.Play();
+                if (Razred.ukljucen == 1)
+                    wrong.Play();
                 if (odgovor2.Text == trenutnoPitanje.točan)
                 {
                     odgovor2.BackColor = Color.Green;
@@ -174,7 +180,8 @@ namespace Ucilica
             {
                 odgovor4.BackColor = Color.Green;
                 odgovor4.Refresh();
-                yay.Play();
+                if (Razred.ukljucen == 1)
+                    yay.Play();
                 bodovi += 10 - numOfHints * 3;
                 Thread.Sleep(5000);
                 if (trenutnoPitanje.slika != "") f.Hide();
@@ -184,7 +191,8 @@ namespace Ucilica
             {
                 odgovor4.BackColor = Color.Red;
                 odgovor4.Refresh();
-                wrong.Play();
+                if (Razred.ukljucen == 1)
+                    wrong.Play();
                 if (odgovor2.Text == trenutnoPitanje.točan)
                 {
                     odgovor2.BackColor = Color.Green;

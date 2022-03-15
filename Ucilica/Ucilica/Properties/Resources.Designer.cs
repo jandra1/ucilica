@@ -213,6 +213,16 @@ namespace Ucilica.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap soundoff {
+            get {
+                object obj = ResourceManager.GetObject("soundoff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap svijet_mms {
             get {
                 object obj = ResourceManager.GetObject("svijet_mms", resourceCulture);
