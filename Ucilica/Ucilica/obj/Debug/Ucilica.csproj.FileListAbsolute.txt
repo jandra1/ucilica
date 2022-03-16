@@ -36,3 +36,4 @@ C:\Users\avedo\Downloads\ucilica-main (4)\ucilica-main\Ucilica\Ucilica\obj\Debug
 C:\Users\avedo\Downloads\ucilica-main (4)\ucilica-main\Ucilica\Ucilica\obj\Debug\Ucilica.csproj.CoreCompileInputs.cache
 C:\Users\avedo\Downloads\ucilica-main (4)\ucilica-main\Ucilica\Ucilica\obj\Debug\Ucilica.exe
 C:\Users\avedo\Downloads\ucilica-main (4)\ucilica-main\Ucilica\Ucilica\obj\Debug\Ucilica.pdb
+C:\Users\john\source\repos\jandra1\ucilica\Ucilica\Ucilica\obj\Debug\Ucilica.Profil.resources
